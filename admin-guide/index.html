@@ -60,24 +60,25 @@
       <a href="#section-0" class="active"><span class="nav-icon">🔐</span>成为管理员</a>
       <a href="#section-1"><span class="nav-icon">🔑</span>系统登录</a>
       <a href="#section-2"><span class="nav-icon">📊</span>仪表盘概览</a>
-      <div class="nav-section">核心功能</div>
+      <div class="nav-section">数据管理</div>
       <div class="category-toggle" onclick="toggleCategory(this)">
         <span><span class="nav-icon">👥</span>投资者管理</span><span class="arrow">▸</span>
       </div>
       <div class="sub-items">
-        <a href="#section-3">— 投资者列表</a>
-        <a href="#section-3">— 创建投资者</a>
-        <a href="#section-3">— 批量导入</a>
+        <a href="#section-3-1">— 投资者列表</a>
+        <a href="#section-3-3">— 创建投资者</a>
+        <a href="#section-3-4">— 批量导入</a>
       </div>
       <div class="category-toggle" onclick="toggleCategory(this)">
         <span><span class="nav-icon">📈</span>股票管理</span><span class="arrow">▸</span>
       </div>
       <div class="sub-items">
-        <a href="#section-4">— 股票列表</a>
-        <a href="#section-4">— 创建/编辑股票</a>
-        <a href="#section-4">— 分配股票</a>
-        <a href="#section-4">— 股票交易</a>
-        <a href="#section-4">— 股票持仓</a>
+        <a href="#section-4-1">— 股票列表</a>
+        <a href="#section-4-2">— 创建股票</a>
+        <a href="#section-4-3">— 编辑股票</a>
+        <a href="#section-4-4">— 分配股票</a>
+        <a href="#section-4-5">— 股票交易</a>
+        <a href="#section-4-6">— 股票持仓</a>
       </div>
       <div class="category-toggle" onclick="toggleCategory(this)">
         <span><span class="nav-icon">💹</span>市场数据管理</span><span class="arrow">▸</span>
@@ -86,13 +87,13 @@
         <a href="#section-5-1">— 汇率快照</a>
         <a href="#section-5-2">— 股市数据</a>
       </div>
-      <div class="nav-section">审核与日志</div>
+      <div class="nav-section">审核与风控</div>
       <div class="category-toggle" onclick="toggleCategory(this)">
         <span><span class="nav-icon">✅</span>记录审核</span><span class="arrow">▸</span>
       </div>
       <div class="sub-items">
-        <a href="#section-6">— 待审核记录</a>
-        <a href="#section-6">— 审核历史</a>
+        <a href="#section-6-1">— 待审核记录</a>
+        <a href="#section-6-2">— 审核历史</a>
       </div>
       <a href="#section-7"><span class="nav-icon">📋</span>审计日志</a>
       <div class="nav-section">系统管理</div>
@@ -230,7 +231,7 @@
 
       <section class="content-section" id="section-3">
         <h2>3. 投资者管理</h2>
-        <h3>3.1 投资者列表</h3>
+        <h3 id="section-3-1">3.1 投资者列表</h3>
         <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 投资者列表</p>
         <div class="callout info"><strong>💡 说明</strong>您还可以通过仪表盘 <strong>快捷操作</strong> → <strong>管理投资者</strong> 直接跳转。</div>
         <p>页面展示所有投资者的详细信息列表。</p>
@@ -269,7 +270,7 @@
 </table></div>
 
         <div class="callout warning"><strong>⚠️ 注意</strong>停用用户后，该投资者将无法登录系统。</div>
-        <h3>3.2 投资者详情</h3>
+        <h3 id="section-3-2">3.2 投资者详情</h3>
         <h4>3.2.1 基本信息编辑</h4>
         <p>点击投资者姓名进入详情页，可编辑：</p>
         <ul>
@@ -348,7 +349,7 @@
 </tbody>
 </table></div>
 
-        <h3>3.3 创建投资者</h3>
+        <h3 id="section-3-3">3.3 创建投资者</h3>
         <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 创建投资者  <br> 或 投资者列表页 → 点击「添加投资者」按钮</p>
         <div class="table-wrapper"><table>
 <thead><tr><th>字段</th><th>说明</th></tr></thead>
@@ -367,7 +368,7 @@
 </table></div>
 
         <div class="callout tip"><strong>💡 建议</strong>创建用户时建议设置 <strong>交易限制</strong>，以防新用户过度交易。</div>
-        <h3>3.4 批量导入</h3>
+        <h3 id="section-3-4">3.4 批量导入</h3>
         <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 批量导入</p>
         <p>通过 CSV 文件批量导入投资者信息。</p>
         <h4>3.4.1 下载模板</h4>
@@ -394,7 +395,7 @@
 </ol>
 
         <div class="callout info"><strong>💡 说明</strong>CSV 文件编码要求为 UTF-8，最大支持 1000 条记录/次。</div>
-        <h3>3.5 投资者操作记录</h3>
+        <h3 id="section-3-5">3.5 投资者操作记录</h3>
         <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 投资者操作记录</p>
         <p>记录每个投资者在管理员端的详细操作日志。</p>
         <div class="table-wrapper"><table>
@@ -412,7 +413,7 @@
 
       <section class="content-section" id="section-4">
         <h2>4. 股票管理</h2>
-        <h3>4.1 股票列表</h3>
+        <h3 id="section-4-1">4.1 股票列表</h3>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票列表</p>
         <p>管理平台支持交易的所有股票。</p>
         <h4>4.1.1 搜索与筛选</h4>
@@ -438,7 +439,7 @@
 </table></div>
 
         <img src="assets/08-stock-allocateStock.jpg" alt="分配股票">
-        <h3>4.2 创建股票</h3>
+        <h3 id="section-4-2">4.2 创建股票</h3>
         <p><strong>操作路径</strong>：股票列表页 → 点击「添加股票」按钮</p>
         <div class="table-wrapper"><table>
 <thead><tr><th>字段</th><th>说明</th></tr></thead>
@@ -455,10 +456,10 @@
         <div class="callout info"><strong>💡 说明</strong>创建后若需禁用该股票，将状态设置为停牌即可。</div>
         
         <img src="assets/07-stockManage-addStock.jpg" alt="添加股票页面">
-        <h3>4.3 编辑股票信息</h3>
+        <h3 id="section-4-3">4.3 编辑股票信息</h3>
         <p>在股票列表页点击 <strong>编辑</strong> 按钮，修改股票信息。</p>
         <div class="callout warning"><strong>⚠️ 注意</strong>股票代码一经创建不可修改。</div>
-        <h3>4.4 分配股票</h3>
+        <h3 id="section-4-4">4.4 分配股票</h3>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 分配股票</p>
         <p>为投资者分配特定股票和数量。</p>
         <h4>4.4.1 分配流程</h4>
@@ -471,7 +472,7 @@
 </ol>
 
         <div class="callout info"><strong>💡 说明</strong>分配股票时会以当天的股票价格记录成本价。</div>
-        <h3>4.5 股票交易</h3>
+        <h3 id="section-4-5">4.5 股票交易</h3>
         <h4>4.5.1 发起交易</h4>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票交易</p>
         <p>为投资者手动发起买入或卖出交易。</p>
@@ -503,7 +504,7 @@
 </table></div>
 
         <div class="callout tip"><strong>💡 提示</strong>适合批量分红的场景，高效完成多次交易。</div>
-        <h3>4.6 股票持仓</h3>
+        <h3 id="section-4-6">4.6 股票持仓</h3>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票持仓</p>
         <p>查看所有投资者的股票持仓汇总。</p>
         <div class="table-wrapper"><table>
@@ -522,7 +523,7 @@
 </table></div>
 
         <div class="callout info"><strong>💡 说明</strong>盈亏计算方式：（当前价格 - 成本价）× 持有数量。</div>
-        <h3>4.7 股票板块管理</h3>
+        <h3 id="section-4-7">4.7 股票板块管理</h3>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 板块管理</p>
         <h4>4.7.1 板块列表</h4>
         <div class="table-wrapper"><table>
@@ -621,7 +622,7 @@
 
       <section class="content-section" id="section-6">
         <h2>6. 记录审核</h2>
-        <h3>6.1 待审核记录</h3>
+        <h3 id="section-6-1">6.1 待审核记录</h3>
         <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 待审核记录</p>
         <h4>6.1.1 审核列表</h4>
         <div class="table-wrapper"><table>
@@ -671,7 +672,7 @@
         <img src="assets/15-record-deposit-detail.jpg" alt="入金记录审核详情">
         <img src="assets/16-record-deposit-detail-voucher.jpg" alt="入金凭证截图">
 
-        <h3>6.2 审核历史</h3>
+        <h3 id="section-6-2">6.2 审核历史</h3>
         <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 审核历史</p>
         <p>查看所有审核操作的完整历史记录。</p>
         <div class="table-wrapper"><table>
@@ -693,7 +694,7 @@
         <img src="assets/14-record-filterByTime.jpg" alt="审核记录按时间筛选">
 
         
-        <h3>6.3 我的审核</h3>
+        <h3 id="section-6-3">6.3 我的审核</h3>
         <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 我的审核</p>
         <p>仅查看当前登录管理员的审核记录。</p>
       </section>
