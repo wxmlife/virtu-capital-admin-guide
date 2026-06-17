@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -35,3 +36,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  sync-gh-pages:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync to gh-pages branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages 2>/dev/null || git checkout --orphan gh-pages-tmp
+          git checkout -b gh-pages-sync
+          cp -r admin-guide/* .
+          cp admin-guide/.nojekyll . 2>/dev/null || true
+          touch .nojekyll
+          rm -rf admin-guide/
+          git add -A
+          git commit -m "sync: 自动同步 admin-guide 内容到 gh-pages" --allow-empty
+          git push origin HEAD:gh-pages --force
+
