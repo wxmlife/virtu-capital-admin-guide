@@ -41,7 +41,7 @@
 
 > ⚠️ **安全提示**：首次登录后请立即修改初始密码，建议开启双因素认证（2FA）。
 
-![](assets/17814915841242.jpg)
+![](assets/01-login-page.jpg)
 
 
 ### 1.2 登录后界面
@@ -54,7 +54,7 @@
 |---|---|
 | 2 | 可选择切换**主题**（Dark / Light 模式） | |
 
-![](assets/17814904542173.jpg)
+![](assets/02-post-login.jpg)
 ---
 
 ## 2. 仪表盘概览
@@ -76,7 +76,7 @@
 
 > 💡 **用途**：快速掌握平台整体资产规模和资金分布情况。
 > 
-![](assets/17814904542173.jpg)
+![](assets/02-post-login.jpg)
 
 
 ### 2.2 黄河账户
@@ -102,7 +102,7 @@
 | 版本 | 当前系统版本号 |
 | 环境 | 运行环境（生产环境/测试环境） |
 
-![](assets/17814905941376.jpg)
+![](assets/03-system-info.jpg)
 
 ---
 
@@ -143,7 +143,7 @@
 | **管理员** | 可管理投资者、审核记录、查看数据 |
 | **超级管理员** | 拥有全部权限，包括系统设定、角色变更等 |
 
-![](assets/17814908324131.jpg)
+![](assets/04-investor-list.jpg)
 
 ### 3.2 投资者操作
 
@@ -168,7 +168,7 @@
 - 永久删除该投资者账户
 - **此操作不可逆**，删除前系统会要求二次确认
 - 建议先导出该用户数据备份
-![](assets/17814907467495.jpg)
+![](assets/07-stockManage-addStock.jpg)
 
 ---
 
@@ -193,7 +193,7 @@
 | **涉及投资者** | 持有股票的投资者人数 |
 
 > 🚨 **重点关注**：「超分配股票」表示分配异常，需立即核查。
-![](assets/17814908905095.jpg)
+![](assets/06-stockManage-accountPosition.jpg)
 
 
 ### 4.2 股票管理列表
@@ -222,7 +222,7 @@
 ### 4.3 新增股票
 
 **操作路径**：股票管理页 → 点击「新增股票」按钮
-![](assets/17814912998068.jpg)
+![](assets/07-stockManage-addStock.jpg)
 
 #### 步骤一：配置股票信息
 
@@ -257,7 +257,7 @@
 
 
 
-![](assets/17814913931243.jpg)
+![](assets/08-stock-allocateStock.jpg)
 
 ---
 ## 5. 市场数据管理
@@ -289,14 +289,14 @@
 
 > ⚠️ **审核要求**：人工编辑的汇率需要提交审核，审核通过后生效。
 
-![](assets/17814914896308.jpg)
+![](assets/09-marketData-exchangeRateDefault.jpg)
 #### 编辑汇率操作步骤
 
 1. 在对应汇率行点击「编辑」
 2. 输入新的汇率数值
 3. 点击「提交审核」
 4. 等待超级管理员审核通过
-![](assets/17814960271749.jpg)
+![](assets/10-marketData-exchangeRateManual.jpg)
 
 ### 5.2 股市数据
 
@@ -323,7 +323,7 @@
 
 > 💡 **说明**：股市数据通常由系统自动同步，管理员一般无需手动干预。如遇数据异常，可联系技术团队处理。
 
-![](assets/17814961248723.jpg)
+![](assets/11-marketData-stockData.jpg)
 ---
 
 ## 6. 记录审核
@@ -332,8 +332,8 @@
 
 > 🔔 **红点提示**：当有「待审核」记录时，菜单会显示红点提醒。
 
-![](assets/17814962667183.jpg)
-![](assets/17814964097405.jpg)
+![](assets/12-record-pendingReview.jpg)
+![](assets/13-record-statueChange.jpg)
 
 
 ### 6.1 检索功能
@@ -391,7 +391,7 @@
 
 > 💡 **操作**：设置好条件后，点击「套用筛选」执行搜索，点击「重设」清空条件。
 
-![](assets/17815014695365.jpg)
+![](assets/14-record-filterByTime.jpg)
 
 ### 6.2 表格结构
 
@@ -451,8 +451,8 @@
 | **入账前余额** | 入账前账户余额 |
 | **入账后余额** | 入账后账户余额 |
 
-![](assets/17814971911859.jpg)
-![](assets/17814972175031.jpg)
+![](assets/15-record-deposit-detail.jpg)
+![](assets/16-record-deposit-detail-voucher.jpg)
 
 
 #### 出金记录审核
@@ -510,7 +510,7 @@
 **操作路径**：左侧导航栏 → 「审计日志」
 
 审计日志记录所有管理员的操作行为，用于安全审计和问题追溯。
-![](assets/17814997673810.jpg)
+![](assets/17-audit-log.jpg)
 
 ### 7.1 筛选条件
 
@@ -526,7 +526,7 @@
 | **开始时间** | 筛选时间范围起点 |
 | **结束时间** | 筛选时间范围终点 |
 
-![](assets/17814999525235.jpg)
+![](assets/18-audit-log-filter-operationType.jpg)
 
 ### 7.2 日志表格
 
@@ -541,7 +541,7 @@
 
 > 💡 **用途**：当出现问题时，可通过审计日志追溯是谁、在何时、做了什么操作。
 
-![](assets/17815000509707.jpg)
+![](assets/17-audit-log-detail.jpg)
 
 ---
 
@@ -551,7 +551,7 @@
 
 > ⚠️ **重要提示**：系统设定的所有修改都需要**提交审核**，审核通过后才会生效。
 
-![](assets/17815001163492.jpg)
+![](assets/19-systemSettings- exchangeFees.jpg)
 
 
 ### 8.1 货币兑换手续费
@@ -585,7 +585,7 @@
 
 > 💡 **计算规则**：实际手续费 = max(固定手续费, 交易金额 × 百分比手续费)
 
-![](assets/17815001722212.jpg)
+![](assets/20-systemSettings- stockTradeFees.jpg)
 
 
 ### 8.3 入金配置
@@ -618,7 +618,7 @@
 |------|------|
 | **手续费百分比** | USDT入金手续费比例 |
 
-![](assets/17815002546108.jpg)
+![](assets/21-systemSettings-deposit-config.jpg)
 ### 8.4 出金配置
 
 | 出金方式 | 配置项 | 说明 |
@@ -627,7 +627,7 @@
 | **本地（香港）转账** | 手续费占比 | 本地转账的手续费比例 |
 | **USDT** | 手续费占比 | USDT提现的手续费比例 |
 
-![](assets/17815003847302.jpg)
+![](assets/22-systemSettings- walletAddress-config.jpg)
 
 ### 8.5 加密货币钱包配置
 
@@ -638,12 +638,12 @@
 
 > ⚠️ **安全警告**：钱包地址配置错误可能导致资金永久丢失，请仔细核对。
 
-![](assets/17815004178811.jpg)
+![](assets/23-crypto-wallet.jpg)
 
 ### 8.6 开户协议配置
 
 配置投资者开户时所需阅读和同意的协议如client agreement。
-![](assets/17815004837274.jpg)
+![](assets/21-systemSettings-deposit-config.jpg)
 
 
 ### 8.7 热门指数配置
@@ -657,8 +657,8 @@
 3. 调整展示顺序（拖拽排序）
 4. 点击「提交审核」
 
-![](assets/17815006199908.jpg)
-![](assets/17815008628385.jpg)
+![](assets/19-systemSettings- exchangeFees.jpg)
+![](assets/20-systemSettings- stockTradeFees.jpg)
 
 
 ### 8.7 推荐券商和股票推荐配置（暂不展示）
@@ -675,7 +675,7 @@
 3. 调整展示顺序（拖拽排序）
 4. 点击「提交审核」
 
-![](assets/17815005761242.jpg)
+![](assets/22-systemSettings- walletAddress-config.jpg)
 
 ---
 
@@ -684,7 +684,7 @@
 **操作路径**：左侧导航栏 → 「消息模板」
 
 系统内置了多种业务场景的通知模板，管理员可查看和编辑模板内容。
-![](assets/17815009003988.jpg)
+![](assets/24-messageTemplate-list.jpg)
 
 ### 9.1 模板列表
 
@@ -727,14 +727,14 @@
 
 > 💡 **变量说明**：模板中 `{变量名}` 的部分会在发送时自动替换为实际值。
 
-![](assets/17815011057837.jpg)
+![](assets/25-messageTemplate- preview.jpg)
 
 ---
 
 ## 10. 用户反馈处理
 
 **操作路径**：左侧导航栏 → 「用户反馈」
-![](assets/17815011492107.jpg)
+![](assets/24-messageTemplate-list.jpg)
 
 
 ### 10.1 反馈列表
@@ -831,10 +831,10 @@
 
 ### 附录 A：审核权限对照表
 #### 客户端角色权限表
-![](assets/17808890152111.jpg)
+![](assets/27-client-permissions.png)
 
 #### 管理员端角色权限表
-![](assets/17808890834776.jpg)
+![](assets/28-admin-permissions.png)
 
 ### 附录 B：联系支持
 
