@@ -5,6 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Virtu Capital 管理员端操作指南</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .sidebar-nav .category-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px 8px 20px;
+      color: var(--text-sidebar);
+      cursor: pointer;
+      font-size: 0.875rem;
+      border-left: 3px solid transparent;
+      transition: var(--transition);
+      gap: 10px;
+      text-decoration: none;
+    }
+    .sidebar-nav .category-toggle:hover {
+      background: var(--bg-sidebar-hover);
+      color: var(--text-sidebar-active);
+    }
+    .sidebar-nav .category-toggle .arrow {
+      font-size: 0.7rem;
+      transition: transform 0.2s ease;
+    }
+    .sidebar-nav .category-toggle.active .arrow {
+      transform: rotate(90deg);
+    }
+    .sidebar-nav .category-toggle.active {
+      color: var(--text-sidebar-active);
+    }
+    .sidebar-nav .sub-items {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .sidebar-nav .sub-items.open {
+      max-height: 1000px;
+    }
+    .sidebar-nav .sub-items a {
+      padding-left: 48px;
+      font-size: 0.8rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -20,13 +61,39 @@
       <a href="#section-1"><span class="nav-icon">🔑</span>系统登录</a>
       <a href="#section-2"><span class="nav-icon">📊</span>仪表盘概览</a>
       <div class="nav-section">核心功能</div>
-      <a href="#section-3"><span class="nav-icon">👥</span>投资者管理</a>
-      <a href="#section-4"><span class="nav-icon">📈</span>股票管理</a>
-      <a href="#section-5"><span class="nav-icon">💹</span>市场数据管理</a>
-      <a href="#section-5-1" class="sub-link">— 汇率快照</a>
-      <a href="#section-5-2" class="sub-link">— 股市数据</a>
+      <div class="category-toggle" onclick="toggleCategory(this)">
+        <span><span class="nav-icon">👥</span>投资者管理</span><span class="arrow">▸</span>
+      </div>
+      <div class="sub-items">
+        <a href="#section-3">— 投资者列表</a>
+        <a href="#section-3">— 创建投资者</a>
+        <a href="#section-3">— 批量导入</a>
+      </div>
+      <div class="category-toggle" onclick="toggleCategory(this)">
+        <span><span class="nav-icon">📈</span>股票管理</span><span class="arrow">▸</span>
+      </div>
+      <div class="sub-items">
+        <a href="#section-4">— 股票列表</a>
+        <a href="#section-4">— 创建/编辑股票</a>
+        <a href="#section-4">— 分配股票</a>
+        <a href="#section-4">— 股票交易</a>
+        <a href="#section-4">— 股票持仓</a>
+      </div>
+      <div class="category-toggle" onclick="toggleCategory(this)">
+        <span><span class="nav-icon">💹</span>市场数据管理</span><span class="arrow">▸</span>
+      </div>
+      <div class="sub-items">
+        <a href="#section-5-1">— 汇率快照</a>
+        <a href="#section-5-2">— 股市数据</a>
+      </div>
       <div class="nav-section">审核与日志</div>
-      <a href="#section-6"><span class="nav-icon">✅</span>记录审核</a>
+      <div class="category-toggle" onclick="toggleCategory(this)">
+        <span><span class="nav-icon">✅</span>记录审核</span><span class="arrow">▸</span>
+      </div>
+      <div class="sub-items">
+        <a href="#section-6">— 待审核记录</a>
+        <a href="#section-6">— 审核历史</a>
+      </div>
       <a href="#section-7"><span class="nav-icon">📋</span>审计日志</a>
       <div class="nav-section">系统管理</div>
       <a href="#section-8"><span class="nav-icon">⚙️</span>系统设定</a>
@@ -217,7 +284,7 @@
 </ul>
 
         <div class="callout info"><strong>💡 说明</strong>信息编辑后点击 <strong>保存</strong> 按钮立即生效。</div>
-        <img src="assets/04-investor-list.jpg" alt="投资者详情">
+        
         <h4>3.2.2 用户头像</h4>
         <p>头像为系统自动生成的 <strong>首字母+随机背景色</strong> 风格，不可手动修改。</p>
         <h4>3.2.3 交易限制设置</h4>
@@ -253,7 +320,7 @@
 </tbody>
 </table></div>
 
-        <img src="assets/06-investor-assets.jpg" alt="投资者资产概览">
+        <img src="assets/06-stockManage-accountPosition.jpg" alt="投资者资产概览">
         <h4>3.2.6 投资者持仓</h4>
         <p>展示该投资者持有的所有股票清单：</p>
         <div class="table-wrapper"><table>
@@ -300,7 +367,6 @@
 </table></div>
 
         <div class="callout tip"><strong>💡 建议</strong>创建用户时建议设置 <strong>交易限制</strong>，以防新用户过度交易。</div>
-        <img src="assets/07-create-investor.jpg" alt="创建投资者">
         <h3>3.4 批量导入</h3>
         <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 批量导入</p>
         <p>通过 CSV 文件批量导入投资者信息。</p>
@@ -371,7 +437,7 @@
 </tbody>
 </table></div>
 
-        <img src="assets/08-stock-list.jpg" alt="股票列表">
+        <img src="assets/08-stock-allocateStock.jpg" alt="分配股票">
         <h3>4.2 创建股票</h3>
         <p><strong>操作路径</strong>：股票列表页 → 点击「添加股票」按钮</p>
         <div class="table-wrapper"><table>
@@ -387,6 +453,8 @@
 </table></div>
 
         <div class="callout info"><strong>💡 说明</strong>创建后若需禁用该股票，将状态设置为停牌即可。</div>
+        
+        <img src="assets/07-stockManage-addStock.jpg" alt="添加股票页面">
         <h3>4.3 编辑股票信息</h3>
         <p>在股票列表页点击 <strong>编辑</strong> 按钮，修改股票信息。</p>
         <div class="callout warning"><strong>⚠️ 注意</strong>股票代码一经创建不可修改。</div>
@@ -403,7 +471,6 @@
 </ol>
 
         <div class="callout info"><strong>💡 说明</strong>分配股票时会以当天的股票价格记录成本价。</div>
-        <img src="assets/09-assign-stock.jpg" alt="分配股票">
         <h3>4.5 股票交易</h3>
         <h4>4.5.1 发起交易</h4>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票交易</p>
@@ -421,7 +488,6 @@
 </table></div>
 
         <div class="callout warning"><strong>⚠️ 注意</strong>系统会自动验证投资者的资金或持仓是否充足。</div>
-        <img src="assets/10-stock-trade.jpg" alt="股票交易">
         <h4>4.5.2 批量交易</h4>
         <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 批量交易</p>
         <p>支持同时为多个投资者执行同一只股票的交易：</p>
@@ -492,8 +558,8 @@
 <tr><td>USDT/USD 卖出</td><td>USDT 兑美元的卖出汇率</td></tr>
 </tbody>
 </table></div>
-
-        <img src="assets/11-exchange-rate.jpg" alt="汇率快照">
+        
+        <img src="assets/09-marketData-exchangeRateDefault.jpg" alt="汇率快照列表">
         <h4>5.1.2 创建汇率快照</h4>
         <p><strong>操作路径</strong>：汇率快照页面 → 点击「创建快照」按钮</p>
         <div class="table-wrapper"><table>
@@ -508,6 +574,8 @@
 </table></div>
 
         <div class="callout info"><strong>💡 说明</strong>汇率更新会影响所有投资者的资产估值。建议每日至少更新一次。</div>
+        <img src="assets/10-marketData-exchangeRateManual.jpg" alt="创建汇率快照">
+
         <h4>5.1.3 编辑汇率快照</h4>
         <p>在汇率快照列表页，点击 <strong>编辑</strong> 图标修改汇率信息。</p>
         <div class="callout warning"><strong>⚠️ 注意</strong>修改历史汇率快照会影响该日期的资产计算。建议仅在更正错误时使用。</div>
@@ -529,8 +597,8 @@
 <tr><td>最低价</td><td>当日最低价格</td></tr>
 </tbody>
 </table></div>
-
-        <img src="assets/12-market-data.jpg" alt="股市数据">
+        
+        <img src="assets/11-marketData-stockData.jpg" alt="股市数据列表">
         <h4>5.2.2 添加股市数据</h4>
         <p><strong>操作路径</strong>：股市数据页面 → 点击「添加数据」按钮</p>
         <div class="table-wrapper"><table>
@@ -569,6 +637,8 @@
 </table></div>
 
         <div class="callout info"><strong>💡 说明</strong>所有投资者发起的交易或资金操作，均需要管理员审核后才能生效。</div>
+        <img src="assets/12-record-pendingReview.jpg" alt="待审核记录列表">
+
         <h4>6.1.2 审核流程</h4>
         <ol>
 <li>查看记录详情</li>
@@ -578,11 +648,11 @@
 <li>拒绝：记录状态变为「已拒绝」，并填写拒绝原因</li>
 </ol>
 
-        <img src="assets/13-pending-review.jpg" alt="待审核记录">
+        <img src="assets/13-record-statueChange.jpg" alt="待审核记录">
         <h4>6.1.3 拒绝原因填写</h4>
         <p>审核拒绝时需要填写拒绝原因：</p>
         <div class="callout warning"><strong>⚠️ 注意</strong>拒绝原因会发送给投资者，需清晰说明具体原因。</div>
-        <img src="assets/14-rejection-reason.jpg" alt="拒绝原因">
+        
         <h4>6.1.4 审核记录详情</h4>
         <p>点击 <strong>详情</strong> 查看该记录的完整信息：</p>
         <div class="table-wrapper"><table>
@@ -598,7 +668,9 @@
 </tbody>
 </table></div>
 
-        <img src="assets/15-deposit-detail.jpg" alt="入金记录审核详情">
+        <img src="assets/15-record-deposit-detail.jpg" alt="入金记录审核详情">
+        <img src="assets/16-record-deposit-detail-voucher.jpg" alt="入金凭证截图">
+
         <h3>6.2 审核历史</h3>
         <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 审核历史</p>
         <p>查看所有审核操作的完整历史记录。</p>
@@ -618,7 +690,9 @@
 </table></div>
 
         <div class="callout info"><strong>💡 说明</strong>审核历史支持按状态、类型、日期范围筛选。</div>
-        <img src="assets/16-review-filter.jpg" alt="审核筛选条件">
+        <img src="assets/14-record-filterByTime.jpg" alt="审核记录按时间筛选">
+
+        
         <h3>6.3 我的审核</h3>
         <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 我的审核</p>
         <p>仅查看当前登录管理员的审核记录。</p>
@@ -641,7 +715,11 @@
 
         <img src="assets/17-audit-log.jpg" alt="审计日志">
         <div class="callout warning"><strong>⚠️ 安全提示</strong>如发现可疑或未经授权的操作记录，请立即联系超级管理员。</div>
-      </section>
+        <img src="assets/17-audit-log-detail.jpg" alt="审计日志详情">
+
+      
+        <img src="assets/18-audit-log-filter-operationType.jpg" alt="审计日志按操作类型筛选">
+</section>
 
       <section class="content-section" id="section-8">
         <h2>8. 系统设定</h2>
@@ -658,10 +736,7 @@
 <tr><td>注册开放</td><td>是否允许新用户注册</td></tr>
 </tbody>
 </table></div>
-
-        <img src="assets/18-system-settings.jpg" alt="系统设定">
-        <img src="assets/19-settings-detail.jpg" alt="系统设定详细页面">
-        <img src="assets/20-commission-config.jpg" alt="交易手续费配置">
+        <img src="assets/19-systemSettings- exchangeFees.jpg" alt="交易手续费配置">
         <h3>8.2 安全策略</h3>
         <div class="table-wrapper"><table>
 <thead><tr><th>策略</th><th>说明</th></tr></thead>
@@ -675,8 +750,9 @@
 </tbody>
 </table></div>
 
-        <img src="assets/21-deposit-config.jpg" alt="入金配置">
-        <img src="assets/22-withdraw-config.jpg" alt="出金配置">
+        <img src="assets/20-systemSettings- stockTradeFees.jpg" alt="入金配置">
+        <img src="assets/21-systemSettings-deposit-config.jpg" alt="出金配置">
+        <img src="assets/22-systemSettings- walletAddress-config.jpg" alt="钱包地址配置">
         <img src="assets/23-crypto-wallet.jpg" alt="加密货币钱包配置">
       </section>
 
@@ -684,7 +760,6 @@
         <h2>9. 消息模板管理</h2>
         <p><strong>操作路径</strong>：侧边栏 → 系统管理 → 消息模板</p>
         <p>管理系统的邮件和通知模板，支持自定义模板内容。</p>
-        <img src="assets/24-template-list.jpg" alt="消息模板列表">
         <h3>9.1 模板列表</h3>
         <div class="table-wrapper"><table>
 <thead><tr><th>字段</th><th>说明</th></tr></thead>
@@ -698,7 +773,9 @@
 </tbody>
 </table></div>
 
-        <img src="assets/25-template-edit.jpg" alt="模板编辑">
+        <img src="assets/24-messageTemplate-list.jpg" alt="模板编辑">
+        
+        <img src="assets/25-messageTemplate- preview.jpg" alt="消息模板预览/编辑">
         <h3>9.2 编辑模板</h3>
         <p>支持 <strong>变量占位符</strong>，系统在发送时会自动替换为实际内容：</p>
         <div class="table-wrapper"><table>
@@ -744,8 +821,6 @@
 <tr><td>操作</td><td>处理 / 删除</td></tr>
 </tbody>
 </table></div>
-
-        <img src="assets/26-user-feedback.jpg" alt="用户反馈">
         <h3>10.2 处理反馈</h3>
         <ol>
 <li>点击「处理」进入反馈详情</li>
@@ -811,8 +886,8 @@
       <section class="content-section" id="appendix-a">
         <h2>附录 A：权限对照表</h2>
         <div class="section-subtitle">管理员 vs 超级管理员 权限对比</div>
-        <img src="assets/27-client-permissions.jpg" alt="客户端角色权限表">
-        <img src="assets/28-admin-permissions.jpg" alt="管理员端角色权限表">
+        <img src="assets/27-client-permissions.png" alt="客户端角色权限表">
+        <img src="assets/28-admin-permissions.png" alt="管理员端角色权限表">
         <div class="table-wrapper"><table>
 <thead><tr><th>功能模块</th><th>管理员</th><th>超级管理员</th></tr></thead>
 <tbody>
@@ -887,5 +962,16 @@
   <button id="back-to-top" title="回到顶部">↑</button>
 
   <script src="script.js"></script>
+
+  <script>
+    function toggleCategory(el) {
+      el.classList.toggle('active');
+      const sub = el.nextElementSibling;
+      if (sub && sub.classList.contains('sub-items')) {
+        sub.classList.toggle('open');
+      }
+    }
+  </script>
+
 </body>
 </html>
