@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtu Capital 管理员端操作指南</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside class="sidebar" role="navigation" aria-label="主要導覽">
+    <div class="sidebar-header">
+      <h1>Virtu Capital<br>管理员端操作指南</h1>
+      <div class="version">v1.0 · 2026年6月</div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">入门</div>
+      <a href="#section-0" class="active"><span class="nav-icon">🔐</span>成为管理员</a>
+      <a href="#section-1"><span class="nav-icon">🔑</span>系统登录</a>
+      <a href="#section-2"><span class="nav-icon">📊</span>仪表盘概览</a>
+      <div class="nav-section">核心功能</div>
+      <a href="#section-3"><span class="nav-icon">👥</span>投资者管理</a>
+      <a href="#section-4"><span class="nav-icon">📈</span>股票管理</a>
+      <a href="#section-5"><span class="nav-icon">💹</span>市场数据管理</a>
+      <a href="#section-5-1" class="sub-link">— 汇率快照</a>
+      <a href="#section-5-2" class="sub-link">— 股市数据</a>
+      <div class="nav-section">审核与日志</div>
+      <a href="#section-6"><span class="nav-icon">✅</span>记录审核</a>
+      <a href="#section-7"><span class="nav-icon">📋</span>审计日志</a>
+      <div class="nav-section">系统管理</div>
+      <a href="#section-8"><span class="nav-icon">⚙️</span>系统设定</a>
+      <a href="#section-9"><span class="nav-icon">💬</span>消息模板管理</a>
+      <a href="#section-10"><span class="nav-icon">📝</span>用户反馈处理</a>
+      <div class="nav-section">参考</div>
+      <a href="#section-11"><span class="nav-icon">❓</span>常见问题 FAQ</a>
+      <a href="#appendix-a"><span class="nav-icon">📑</span>附录 A：权限对照表</a>
+      <a href="#appendix-b"><span class="nav-icon">📞</span>附录 B：联系支持</a>
+    </nav>
+    <div class="sidebar-footer">
+      &copy; 2026 Virtu Capital. All rights reserved.
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="main-content">
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <button id="mobile-toggle-btn" class="mobile-toggle" aria-label="Toggle menu">☰</button>
+        <span class="page-title">📖 管理员操作指南</span>
+      </div>
+      <div class="top-actions">
+        <button id="theme-toggle" title="切换主题">🌙 深色</button>
+        <button id="print-btn" title="列印或匯出為 PDF">🖨️ 列印</button>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+
+      <section class="content-section" id="title">
+        <h1>Virtu Capital 管理员端操作指南</h1>
+        <div class="doc-info">
+          <table class="info-table">
+            <tr><td class="info-label">文档版本</td><td>v1.0</td></tr>
+            <tr><td class="info-label">适用对象</td><td>系统管理员、超级管理员、运营人员、风控人员</td></tr>
+            <tr><td class="info-label">最后更新</td><td>2026年6月</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-section" id="section-0">
+        <h2>0. 如何成为管理员</h2>
+        <div class="step-card"><div class="step-title"><span class="step-number">1</span>注册投资者账号</div><div class="step-content"><p>在 <strong>Virtu Capital 客户端</strong> 使用香港手机号注册为 <strong>投资者</strong>，绑定自定义邮箱（如：name@virtucapital.com）和密码。</p><div class="callout info"><strong>💡 说明</strong>当前邮箱不需要注册和验证，后续会添加验证功能。</div></div></div>
+        <div class="step-card"><div class="step-title"><span class="step-number">2</span>提升为管理员</div><div class="step-content"><p>由已存在的管理员账号将投资者角色更改为 <strong>管理员</strong>。</p></div></div>
+        <div class="step-card"><div class="step-title"><span class="step-number">3</span>提升为超级管理员</div><div class="step-content"><p>由后端技术人员将投资者角色更改为 <strong>超级管理员</strong>。</p></div></div>
+      </section>
+
+      <section class="content-section" id="section-1">
+        <h2>1. 系统登录与基础设置</h2>
+        <h3>1.1 登录系统</h3>
+        <p><strong>操作路径</strong>：访问管理员端网址 → 输入账号密码 → 点击登录</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>步骤</th><th>操作说明</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>在浏览器中打开 <a href="https://app.virtu-capital.com/zh-Hant/admin/users" target="_blank">Virtu Capital 管理员端地址</a></td></tr>
+<tr><td>2</td><td>输入 <strong>邮件账号</strong>（如 admin@virtucapital.com）</td></tr>
+<tr><td>3</td><td>输入 <strong>密码</strong></td></tr>
+<tr><td>4</td><td>点击「登录」按钮</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout warning"><strong>⚠️ 安全提示</strong>首次登录后请立即修改初始密码，建议开启双因素认证（2FA）。</div>
+        <img src="assets/17814915841242.jpg" alt="登录页面">
+        <h3>1.2 登录后界面</h3>
+        <p>登录成功后，页面左下角显示：</p>
+        <ul>
+<li><strong>管理员名称</strong>：当前登录账号的显示名称</li>
+<li><strong>登出按钮</strong>：点击可安全退出系统</li>
+</ul>
+
+        <div class="table-wrapper"><table>
+<thead><tr><th>功能</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>语言切换</td><td>支持 English / 繁体中文 / 简体中文</td></tr>
+<tr><td>主题切换</td><td>支持 Dark / Light 模式</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814904542173.jpg" alt="登录后界面">
+      </section>
+
+      <section class="content-section" id="section-2">
+        <h2>2. 仪表盘概览</h2>
+        <p>仪表盘是管理员登录后的默认首页，提供平台核心数据的 <strong>实时监控</strong>。</p>
+        <h3>2.1 市场概览卡片</h3>
+        <div class="table-wrapper"><table>
+<thead><tr><th>指标</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>总投资者数</td><td>平台注册投资者的总人数</td></tr>
+<tr><td>总资产（HKD）</td><td>所有投资者资产的总和（按当前汇率折算为港币）</td></tr>
+<tr><td>股票价值（HKD）</td><td>所有投资者持有股票的市值总和</td></tr>
+<tr><td>├─ W/L 24小时盈亏</td><td>最近24小时内股票市值的盈亏变化</td></tr>
+<tr><td>现金</td><td>各币种的现金余额汇总</td></tr>
+<tr><td>├─ HKD</td><td>港币现金余额</td></tr>
+<tr><td>├─ USD</td><td>美元现金余额</td></tr>
+<tr><td>└─ USDT</td><td>USDT 余额</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout tip"><strong>💡 用途</strong>快速掌握平台整体资产规模和资金分布情况。</div>
+        <img src="assets/17814904542173.jpg" alt="市场概览卡片">
+        <h3>2.2 黄河账户</h3>
+        <p>显示平台自有资金的账户余额：</p>
+        <ul>
+<li>美元余额</li>
+<li>港元余额</li>
+</ul>
+
+        <div class="callout warning"><strong>⚠️ 注意</strong>黄河账户用于平台资金调配，操作需谨慎。</div>
+        <h3>2.3 快捷操作</h3>
+        <p>提供三个常用功能的快速入口：</p>
+        <ol>
+<li><strong>管理投资者</strong> → 跳转至投资者列表页</li>
+<li><strong>管理股票分配</strong> → 跳转至股票管理页</li>
+<li><strong>查看市场</strong> → 跳转至市场数据页</li>
+</ol>
+
+        <h3>2.4 系统信息</h3>
+        <div class="table-wrapper"><table>
+<thead><tr><th>项目</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>应用程序</td><td>系统名称（Virtu Capital）</td></tr>
+<tr><td>版本</td><td>当前系统版本号</td></tr>
+<tr><td>环境</td><td>运行环境（生产环境/测试环境）</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814905941376.jpg" alt="系统信息">
+      </section>
+
+      <section class="content-section" id="section-3">
+        <h2>3. 投资者管理</h2>
+        <h3>3.1 投资者列表</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 投资者列表</p>
+        <div class="callout info"><strong>💡 说明</strong>您还可以通过仪表盘 <strong>快捷操作</strong> → <strong>管理投资者</strong> 直接跳转。</div>
+        <p>页面展示所有投资者的详细信息列表。</p>
+        <h4>3.1.1 搜索与筛选</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>筛选条件</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>姓名/邮箱/电话</td><td>支持模糊搜索</td></tr>
+<tr><td>状态</td><td>全部 / 启用 / 停用</td></tr>
+<tr><td>交易权限</td><td>全部 / 启用 / 停用</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout tip"><strong>💡 提示</strong>输入关键词后系统自动过滤，无需点击搜索按钮。</div>
+        <img src="assets/17814905941376.jpg" alt="投资者列表">
+        <h4>3.1.2 列表字段</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>序号</td><td>列表中行号</td></tr>
+<tr><td>姓名</td><td>投资者姓名，点击姓名可查看详情/编辑信息</td></tr>
+<tr><td>邮箱</td><td>投资者注册时绑定的邮箱</td></tr>
+<tr><td>电话</td><td>投资者的香港手机号</td></tr>
+<tr><td>状态</td><td>用户状态标签。绿色=启用，红色=停用</td></tr>
+<tr><td>交易权限</td><td>交易功能是否开启。绿色=启用，红色=停用</td></tr>
+<tr><td>操作</td><td>停用/启用按钮，切换投资者状态</td></tr>
+</tbody>
+</table></div>
+
+        <h4>3.1.3 操作按钮</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>按钮</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>停用/启用</td><td>点击后弹出二次确认框，确认后该用户不可登录/可恢复登录</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout warning"><strong>⚠️ 注意</strong>停用用户后，该投资者将无法登录系统。</div>
+        <h3>3.2 投资者详情</h3>
+        <h4>3.2.1 基本信息编辑</h4>
+        <p>点击投资者姓名进入详情页，可编辑：</p>
+        <ul>
+<li>姓名（不可留空）</li>
+<li>电话号码</li>
+<li>性别</li>
+<li>出生日期（格式：YYYY-MM-DD）</li>
+<li>国籍</li>
+<li>身份证号</li>
+<li>用户状态：启用/停用</li>
+<li>交易权限：启用/停用</li>
+</ul>
+
+        <div class="callout info"><strong>💡 说明</strong>信息编辑后点击 <strong>保存</strong> 按钮立即生效。</div>
+        <img src="assets/17814915231906.jpg" alt="投资者详情">
+        <h4>3.2.2 用户头像</h4>
+        <p>头像为系统自动生成的 <strong>首字母+随机背景色</strong> 风格，不可手动修改。</p>
+        <h4>3.2.3 交易限制设置</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>每日交易限额</td><td>投资者一天内可交易的最大金额（HKD）</td></tr>
+<tr><td>单笔交易限额</td><td>投资者单笔交易的最大金额（HKD）</td></tr>
+<tr><td>每日交易次数</td><td>投资者一天内可交易的最大次数</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout warning"><strong>⚠️ 注意</strong>交易限制有助于控制投资风险，建议根据投资者风险评估合理设置。</div>
+        <img src="assets/17814916763201.jpg" alt="交易限制">
+        <h4>3.2.4 更改密码</h4>
+        <ol>
+<li>在投资者详情页点击「更改密码」按钮</li>
+<li>在弹出的对话框中输入新密码</li>
+<li>确认新密码</li>
+<li>点击「确定」完成密码重置</li>
+</ol>
+
+        <div class="callout warning"><strong>⚠️ 安全提示</strong>重置密码后，请告知投资者立即登录并修改密码。</div>
+        <h4>3.2.5 投资者资产概览</h4>
+        <p>展示该投资者的资产摘要：</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>资产项</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>现金</td><td>各币种余额（HKD / USD / USDT）</td></tr>
+<tr><td>冻结资金</td><td>因未结算的交易而冻结的资金金额</td></tr>
+<tr><td>股票市值</td><td>所持有股票的当前总市值（HKD）</td></tr>
+<tr><td>总资产</td><td>现金 + 股票市值的总和（HKD）</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814917294611.jpg" alt="投资者资产概览">
+        <h4>3.2.6 投资者持仓</h4>
+        <p>展示该投资者持有的所有股票清单：</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票代码</td><td>如 AAPL</td></tr>
+<tr><td>股票名称</td><td>如 Apple Inc.</td></tr>
+<tr><td>持有数量</td><td>该投资者持有该股票的总股数</td></tr>
+<tr><td>市值(HKD)</td><td>当前持仓的港币市值</td></tr>
+</tbody>
+</table></div>
+
+        <h4>3.2.7 交易记录</h4>
+        <p>展示该投资者的历史交易明细：</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>类型</td><td>交易类型（买入/卖出/分红）</td></tr>
+<tr><td>标的</td><td>交易的股票代码（如有）</td></tr>
+<tr><td>方向</td><td>交易方向（买入/卖出）</td></tr>
+<tr><td>数量</td><td>交易股数</td></tr>
+<tr><td>金额</td><td>交易金额（对应币种）</td></tr>
+<tr><td>状态</td><td>交易状态（成功/待确认/失败）</td></tr>
+<tr><td>时间</td><td>交易创建时间</td></tr>
+</tbody>
+</table></div>
+
+        <h3>3.3 创建投资者</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 创建投资者  <br> 或 投资者列表页 → 点击「添加投资者」按钮</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>姓名</td><td>投资者的真实姓名（不可留空）</td></tr>
+<tr><td>邮箱</td><td>投资者的邮箱地址（不可留空）</td></tr>
+<tr><td>密码</td><td>登录密码（不可留空）</td></tr>
+<tr><td>电话号码</td><td>香港手机号，格式：+852XXXXXXXX</td></tr>
+<tr><td>性别</td><td>男/女/不透露</td></tr>
+<tr><td>出生日期</td><td>格式：YYYY-MM-DD</td></tr>
+<tr><td>国籍</td><td>下拉选择国家</td></tr>
+<tr><td>身份证号</td><td>投资者的身份证件号码</td></tr>
+<tr><td>用户状态</td><td>创建后的初始状态，默认为启用</td></tr>
+<tr><td>交易权限</td><td>创建后的初始交易权限，默认为启用</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout tip"><strong>💡 建议</strong>创建用户时建议设置 <strong>交易限制</strong>，以防新用户过度交易。</div>
+        <img src="assets/17814917650913.jpg" alt="创建投资者">
+        <h3>3.4 批量导入</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 批量导入</p>
+        <p>通过 CSV 文件批量导入投资者信息。</p>
+        <h4>3.4.1 下载模板</h4>
+        <p>点击「下载模板」按钮，获取标准 CSV 模板文件，包含以下列：</p>
+        <ul>
+<li>姓名</li>
+<li>邮箱</li>
+<li>密码</li>
+<li>电话号码</li>
+<li>性别</li>
+<li>出生日期</li>
+<li>国籍</li>
+<li>身份证号</li>
+<li>用户状态</li>
+<li>交易权限</li>
+</ul>
+
+        <h4>3.4.2 导入 CSV</h4>
+        <ol>
+<li>准备 CSV 文件（需包含表头和数据行）</li>
+<li>点击「上传文件」按钮选择文件</li>
+<li>点击「导入」按钮提交数据</li>
+<li>导入完成后显示导入结果（成功/失败数量及详情）</li>
+</ol>
+
+        <div class="callout info"><strong>💡 说明</strong>CSV 文件编码要求为 UTF-8，最大支持 1000 条记录/次。</div>
+        <h3>3.5 投资者操作记录</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 投资者管理 → 投资者操作记录</p>
+        <p>记录每个投资者在管理员端的详细操作日志。</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>时间</td><td>操作时间</td></tr>
+<tr><td>投资者名称</td><td>操作者的名称</td></tr>
+<tr><td>动作</td><td>具体操作内容（如：修改密码、更新个人信息等）</td></tr>
+<tr><td>IP 地址</td><td>操作时的 IP 地址</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout warning"><strong>⚠️ 安全提示</strong>如发现可疑操作记录，请立即联系超级管理员处理。</div>
+      </section>
+
+      <section class="content-section" id="section-4">
+        <h2>4. 股票管理</h2>
+        <h3>4.1 股票列表</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票列表</p>
+        <p>管理平台支持交易的所有股票。</p>
+        <h4>4.1.1 搜索与筛选</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>筛选条件</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票代码</td><td>输入代码进行精确搜索</td></tr>
+<tr><td>股票板块</td><td>按市场板块分类筛选</td></tr>
+</tbody>
+</table></div>
+
+        <h4>4.1.2 列表字段</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票代码</td><td>股票的唯一交易代码</td></tr>
+<tr><td>股票名称</td><td>股票的公司名称</td></tr>
+<tr><td>当前价格</td><td>当前最新股价</td></tr>
+<tr><td>所属板块</td><td>股票所属市场板块</td></tr>
+<tr><td>交易状态</td><td>显示为标签：交易中/停牌</td></tr>
+<tr><td>操作</td><td>编辑 / 删除</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814918615922.jpg" alt="股票列表">
+        <h3>4.2 创建股票</h3>
+        <p><strong>操作路径</strong>：股票列表页 → 点击「添加股票」按钮</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票代码</td><td>股票的唯一交易代码（不可留空，创建后不可修改）</td></tr>
+<tr><td>股票名称</td><td>股票的公司名称（不可留空）</td></tr>
+<tr><td>所属板块</td><td>选择股票所属的板块分类</td></tr>
+<tr><td>当前价格</td><td>股票当前的价格（不可留空）</td></tr>
+<tr><td>交易状态</td><td>交易中/停牌</td></tr>
+<tr><td>描述</td><td>股票或公司的补充说明</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>创建后若需禁用该股票，将状态设置为停牌即可。</div>
+        <h3>4.3 编辑股票信息</h3>
+        <p>在股票列表页点击 <strong>编辑</strong> 按钮，修改股票信息。</p>
+        <div class="callout warning"><strong>⚠️ 注意</strong>股票代码一经创建不可修改。</div>
+        <h3>4.4 分配股票</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 分配股票</p>
+        <p>为投资者分配特定股票和数量。</p>
+        <h4>4.4.1 分配流程</h4>
+        <ol>
+<li>选择要分配股票的 <strong>投资者</strong></li>
+<li>选择要分配的 <strong>股票</strong></li>
+<li>填写分配的 <strong>数量</strong></li>
+<li>选择 <strong>分配日期</strong>（默认为当前日期）</li>
+<li>点击「提交」确认分配</li>
+</ol>
+
+        <div class="callout info"><strong>💡 说明</strong>分配股票时会以当天的股票价格记录成本价。</div>
+        <img src="assets/17814918906964.jpg" alt="分配股票">
+        <h3>4.5 股票交易</h3>
+        <h4>4.5.1 发起交易</h4>
+        <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票交易</p>
+        <p>为投资者手动发起买入或卖出交易。</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>投资者</td><td>选择要交易的投资者</td></tr>
+<tr><td>交易类型</td><td>买入 / 卖出</td></tr>
+<tr><td>股票</td><td>选择要交易的股票</td></tr>
+<tr><td>交易价格</td><td>输入交易价格（使用当前市场价格或自定义价格）</td></tr>
+<tr><td>数量</td><td>输入交易股数（买入时需确保投资者有足够现金，卖出时需确保投资者持有足够股票）</td></tr>
+<tr><td>交易时间</td><td>选择交易时间（默认为当前时间）</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout warning"><strong>⚠️ 注意</strong>系统会自动验证投资者的资金或持仓是否充足。</div>
+        <img src="assets/17814919239998.jpg" alt="股票交易">
+        <h4>4.5.2 批量交易</h4>
+        <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 批量交易</p>
+        <p>支持同时为多个投资者执行同一只股票的交易：</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票</td><td>选择要交易的股票</td></tr>
+<tr><td>交易类型</td><td>买入 / 卖出</td></tr>
+<tr><td>交易价格</td><td>交易价格</td></tr>
+<tr><td>交易时间</td><td>交易执行时间</td></tr>
+<tr><td>投资者列表</td><td>选择多个投资者并输入每个投资者的交易数量</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout tip"><strong>💡 提示</strong>适合批量分红的场景，高效完成多次交易。</div>
+        <h3>4.6 股票持仓</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 股票持仓</p>
+        <p>查看所有投资者的股票持仓汇总。</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>投资者</td><td>持仓的投资者名称</td></tr>
+<tr><td>股票代码</td><td>持有的股票代码</td></tr>
+<tr><td>股票名称</td><td>持有的股票名称</td></tr>
+<tr><td>持有数量</td><td>当前持有该股票的总数</td></tr>
+<tr><td>成本价</td><td>购入该股票时的平均成本价</td></tr>
+<tr><td>当前价格</td><td>该股票的当前市场价</td></tr>
+<tr><td>市值 HKD</td><td>该持仓的当前总市值（港币）</td></tr>
+<tr><td>盈亏 HKD</td><td>当前持仓的浮动盈亏（港币）</td></tr>
+<tr><td>盈亏率 %</td><td>当前持仓的浮动盈亏率</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>盈亏计算方式：（当前价格 - 成本价）× 持有数量。</div>
+        <h3>4.7 股票板块管理</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 股票管理 → 板块管理</p>
+        <h4>4.7.1 板块列表</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>板块名称</td><td>如：科技股、金融股、医疗股等</td></tr>
+<tr><td>创建时间</td><td>板块创建时间</td></tr>
+</tbody>
+</table></div>
+
+        <h4>4.7.2 创建板块</h4>
+        <ol>
+<li>在板块管理页面点击「添加板块」按钮</li>
+<li>输入板块名称</li>
+<li>点击确认创建</li>
+</ol>
+
+      </section>
+
+      <section class="content-section" id="section-5">
+        <h2>5. 市场数据管理</h2>
+        <h3 id="section-5-1">5.1 汇率快照</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 市场数据管理 → 汇率快照</p>
+        <p>管理不同时间点的汇率快照，用于资产计算和历史数据追溯。</p>
+        <h4>5.1.1 汇率快照列表</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>日期</td><td>快照记录的日期</td></tr>
+<tr><td>USD/HKD 买入</td><td>美元兑港币的买入汇率</td></tr>
+<tr><td>USD/HKD 卖出</td><td>美元兑港币的卖出汇率</td></tr>
+<tr><td>USDT/USD 买入</td><td>USDT 兑美元的买入汇率</td></tr>
+<tr><td>USDT/USD 卖出</td><td>USDT 兑美元的卖出汇率</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814919787049.jpg" alt="汇率快照">
+        <h4>5.1.2 创建汇率快照</h4>
+        <p><strong>操作路径</strong>：汇率快照页面 → 点击「创建快照」按钮</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>日期</td><td>快照记录日期（默认为当前日期）</td></tr>
+<tr><td>USD/HKD 买入</td><td>买入 1 美元需要多少港币</td></tr>
+<tr><td>USD/HKD 卖出</td><td>卖出 1 美元需要多少港币</td></tr>
+<tr><td>USDT/USD 买入</td><td>买入 1 USDT 需要多少美元</td></tr>
+<tr><td>USDT/USD 卖出</td><td>卖出 1 USDT 需要多少美元</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>汇率更新会影响所有投资者的资产估值。建议每日至少更新一次。</div>
+        <h4>5.1.3 编辑汇率快照</h4>
+        <p>在汇率快照列表页，点击 <strong>编辑</strong> 图标修改汇率信息。</p>
+        <div class="callout warning"><strong>⚠️ 注意</strong>修改历史汇率快照会影响该日期的资产计算。建议仅在更正错误时使用。</div>
+
+        <div class="section-divider"></div>
+
+        <h3 id="section-5-2">5.2 股市数据</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 市场数据管理 → 股市数据</p>
+        <p>管理股票的历史市场数据。</p>
+        <h4>5.2.1 股市数据列表</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票代码</td><td>股票的交易代码</td></tr>
+<tr><td>日期</td><td>数据的日期</td></tr>
+<tr><td>开盘价</td><td>当日开盘价格</td></tr>
+<tr><td>收盘价</td><td>当日收盘价格</td></tr>
+<tr><td>最高价</td><td>当日最高价格</td></tr>
+<tr><td>最低价</td><td>当日最低价格</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814920314987.jpg" alt="股市数据">
+        <h4>5.2.2 添加股市数据</h4>
+        <p><strong>操作路径</strong>：股市数据页面 → 点击「添加数据」按钮</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>股票</td><td>选择股票（下拉选择）</td></tr>
+<tr><td>日期</td><td>数据日期</td></tr>
+<tr><td>开盘价</td><td>当日开盘价格</td></tr>
+<tr><td>收盘价</td><td>当日收盘价格</td></tr>
+<tr><td>最高价</td><td>当日最高价格</td></tr>
+<tr><td>最低价</td><td>当日最低价格</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>股市数据用于 K 线图展示和技术分析指标计算。</div>
+        <h4>5.2.3 删除股市数据</h4>
+        <p>在股市数据列表页，点击 <strong>删除</strong> 图标删除数据。</p>
+        <div class="callout warning"><strong>⚠️ 注意</strong>删除操作不可撤销，请谨慎操作。</div>
+      </section>
+
+      <section class="content-section" id="section-6">
+        <h2>6. 记录审核</h2>
+        <h3>6.1 待审核记录</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 待审核记录</p>
+        <h4>6.1.1 审核列表</h4>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>投资者</td><td>发起该记录的投资者姓名</td></tr>
+<tr><td>类型</td><td>记录类型（存款 / 取款 / 转账 / 股票买入 / 股票卖出 / 股票分红）</td></tr>
+<tr><td>金额</td><td>交易金额</td></tr>
+<tr><td>提交时间</td><td>投资者提交该记录的时间</td></tr>
+<tr><td>当前状态</td><td>待审核</td></tr>
+<tr><td>操作</td><td>审核通过 / 审核拒绝</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>所有投资者发起的交易或资金操作，均需要管理员审核后才能生效。</div>
+        <h4>6.1.2 审核流程</h4>
+        <ol>
+<li>查看记录详情</li>
+<li>核实信息的准确性</li>
+<li>点击「通过」或「拒绝」</li>
+<li>通过：记录状态变为「已通过」，自动执行（扣款/到账等）</li>
+<li>拒绝：记录状态变为「已拒绝」，并填写拒绝原因</li>
+</ol>
+
+        <img src="assets/17814921144135.jpg" alt="待审核记录">
+        <h4>6.1.3 拒绝原因填写</h4>
+        <p>审核拒绝时需要填写拒绝原因：</p>
+        <div class="callout warning"><strong>⚠️ 注意</strong>拒绝原因会发送给投资者，需清晰说明具体原因。</div>
+        <img src="assets/17814921563018.jpg" alt="拒绝原因">
+        <h4>6.1.4 审核记录详情</h4>
+        <p>点击 <strong>详情</strong> 查看该记录的完整信息：</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>编号</td><td>系统自动生成的唯一记录编号</td></tr>
+<tr><td>投资者</td><td>关联的投资者</td></tr>
+<tr><td>币种</td><td>交易币种</td></tr>
+<tr><td>类型</td><td>记录类型</td></tr>
+<tr><td>金额</td><td>交易金额</td></tr>
+<tr><td>提交时间</td><td>投资者提交的时间</td></tr>
+<tr><td>附件</td><td>投资者上传的凭证/文件</td></tr>
+</tbody>
+</table></div>
+
+        <h3>6.2 审核历史</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 审核历史</p>
+        <p>查看所有审核操作的完整历史记录。</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>编号</td><td>记录的唯一编号</td></tr>
+<tr><td>投资者</td><td>记录的发起者</td></tr>
+<tr><td>类型</td><td>记录类型</td></tr>
+<tr><td>金额</td><td>交易金额</td></tr>
+<tr><td>提交时间</td><td>提交时间</td></tr>
+<tr><td>审核者</td><td>审核该记录的管理员名称</td></tr>
+<tr><td>状态</td><td>当前状态（已通过 / 已拒绝）</td></tr>
+<tr><td>审核时间</td><td>审核完成的时间</td></tr>
+<tr><td>审核备注</td><td>审核时的备注或拒绝原因</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>审核历史支持按状态、类型、日期范围筛选。</div>
+        <h3>6.3 我的审核</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 记录审核 → 我的审核</p>
+        <p>仅查看当前登录管理员的审核记录。</p>
+      </section>
+
+      <section class="content-section" id="section-7">
+        <h2>7. 审计日志</h2>
+        <p><strong>操作路径</strong>：侧边栏 → 审计日志 → 审计日志</p>
+        <p>审计日志是系统自动记录所有管理员操作的详细日志，包括操作时间、操作者、操作内容及 IP 地址。</p>
+        <div class="section-subtitle">用于安全审计和问题追溯。</div>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>时间</td><td>操作发生的具体时间</td></tr>
+<tr><td>管理员</td><td>执行操作的管理员名称</td></tr>
+<tr><td>动作</td><td>具体操作内容</td></tr>
+<tr><td>IP 地址</td><td>操作时的 IP 地址</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814922050448.jpg" alt="审计日志">
+        <div class="callout warning"><strong>⚠️ 安全提示</strong>如发现可疑或未经授权的操作记录，请立即联系超级管理员。</div>
+      </section>
+
+      <section class="content-section" id="section-8">
+        <h2>8. 系统设定</h2>
+        <h3>8.1 基本配置</h3>
+        <p><strong>操作路径</strong>：侧边栏 → 系统管理 → 系统设定</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>配置项</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>平台名称</td><td>平台显示名称</td></tr>
+<tr><td>平台 Logo</td><td>上传平台 Logo 图片</td></tr>
+<tr><td>联系邮箱</td><td>显示在客户端页面的联系邮箱</td></tr>
+<tr><td>联系电话</td><td>显示在客户端页面的联系电话</td></tr>
+<tr><td>维护模式</td><td>开启后仅管理员可登录，投资者无法访问系统</td></tr>
+<tr><td>注册开放</td><td>是否允许新用户注册</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814922593108.jpg" alt="系统设定">
+        <h3>8.2 安全策略</h3>
+        <div class="table-wrapper"><table>
+<thead><tr><th>策略</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>密码最小长度</td><td>设置密码的最小字符数</td></tr>
+<tr><td>密码复杂度</td><td>是否需要包含大小写字母、数字、特殊字符</td></tr>
+<tr><td>登录失败锁定次数</td><td>连续登录失败几次后锁定账号</td></tr>
+<tr><td>登录失败锁定时间</td><td>锁定持续的时间（分钟）</td></tr>
+<tr><td>会话超时时间</td><td>用户无操作后自动登出的时间（分钟）</td></tr>
+<tr><td>2FA 强制开启</td><td>是否所有管理员必须开启双因素认证</td></tr>
+</tbody>
+</table></div>
+
+      </section>
+
+      <section class="content-section" id="section-9">
+        <h2>9. 消息模板管理</h2>
+        <p><strong>操作路径</strong>：侧边栏 → 系统管理 → 消息模板</p>
+        <p>管理系统的邮件和通知模板，支持自定义模板内容。</p>
+        <h3>9.1 模板列表</h3>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>模板名称</td><td>模板的唯一标识名称（如：welcome_email, reset_password）</td></tr>
+<tr><td>主题</td><td>模板的主题（如：欢迎注册、密码重置）</td></tr>
+<tr><td>类型</td><td>模板类型（电子邮件 / 短信 / 系统通知）</td></tr>
+<tr><td>状态</td><td>启用 / 停用</td></tr>
+<tr><td>最后更新</td><td>模板最后修改时间</td></tr>
+<tr><td>操作</td><td>编辑 / 预览 / 删除</td></tr>
+</tbody>
+</table></div>
+
+        <h3>9.2 编辑模板</h3>
+        <p>支持 <strong>变量占位符</strong>，系统在发送时会自动替换为实际内容：</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>占位符</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>{{user_name}}</td><td>用户姓名</td></tr>
+<tr><td>{{platform_name}}</td><td>平台名称</td></tr>
+<tr><td>{{verify_code}}</td><td>验证码</td></tr>
+<tr><td>{{reset_link}}</td><td>密码重置链接</td></tr>
+<tr><td>{{date}}</td><td>当前日期</td></tr>
+<tr><td>{{amount}}</td><td>交易金额</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>模板内容支持 HTML 格式，可以自定义样式。</div>
+        <h3>9.3 创建模板</h3>
+        <p>在模板列表页点击「添加模板」按钮。</p>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>模板名称</td><td>模板的唯一标识名称</td></tr>
+<tr><td>模板类型</td><td>电子邮件 / 短信 / 系统通知</td></tr>
+<tr><td>主题</td><td>邮件主题或通知标题</td></tr>
+<tr><td>模板内容</td><td>模板的正文内容</td></tr>
+</tbody>
+</table></div>
+
+      </section>
+
+      <section class="content-section" id="section-10">
+        <h2>10. 用户反馈处理</h2>
+        <p><strong>操作路径</strong>：侧边栏 → 系统管理 → 用户反馈</p>
+        <p>管理用户提交的反馈意见，支持回复和状态跟踪。</p>
+        <h3>10.1 反馈列表</h3>
+        <div class="table-wrapper"><table>
+<thead><tr><th>字段</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td>提交者</td><td>提交反馈的用户</td></tr>
+<tr><td>类型</td><td>反馈类型（功能建议 / 问题报告 / 其他）</td></tr>
+<tr><td>内容</td><td>反馈内容摘要</td></tr>
+<tr><td>状态</td><td>待处理 / 处理中 / 已处理</td></tr>
+<tr><td>提交时间</td><td>反馈提交时间</td></tr>
+<tr><td>操作</td><td>处理 / 删除</td></tr>
+</tbody>
+</table></div>
+
+        <img src="assets/17814922948360.jpg" alt="用户反馈">
+        <h3>10.2 处理反馈</h3>
+        <ol>
+<li>点击「处理」进入反馈详情</li>
+<li>查看反馈的完整内容和相关信息</li>
+<li>填写处理结果或回复内容</li>
+<li>将状态更新为「已处理」或保持「处理中」</li>
+<li>提交后用户可在客户端查看回复</li>
+</ol>
+
+      </section>
+
+      <section class="content-section" id="section-11">
+        <h2>11. 常见问题 FAQ</h2>
+        <h3>11.1 账户与权限</h3>
+        <div class="faq-item">
+          <div class="faq-question">Q: 如何新增一个管理员账号？</div>
+          <div class="faq-answer">A: 必须先注册为投资者账号，再由已存在的管理员将其角色提升为管理员。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: 管理员和超级管理员有什么区别？</div>
+          <div class="faq-answer">A: 超级管理员拥有所有权限，包括系统设定、管理员管理等。管理员拥有除系统核心设置外的所有操作权限。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: 忘记管理员密码怎么办？</div>
+          <div class="faq-answer">A: 可在登录页面点击「忘记密码」，通过绑定的邮箱重置密码。如无法重置，请联系超级管理员。</div>
+        </div>
+
+        <h3>11.2 投资者管理</h3>
+        <div class="faq-item">
+          <div class="faq-question">Q: 停用投资者账号后，该投资者的资产会如何处理？</div>
+          <div class="faq-answer">A: 停用账号仅限制该用户登录，资产保持不变。重新启用账号后可正常登录和交易。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: 如何批量导入投资者？</div>
+          <div class="faq-answer">A: 使用批量导入功能，下载 CSV 模板，按要求填写后上传导入。</div>
+        </div>
+
+        <h3>11.3 交易与审核</h3>
+        <div class="faq-item">
+          <div class="faq-question">Q: 投资者提交的存款/取款记录审核流程是怎样的？</div>
+          <div class="faq-answer">A: 投资者提交记录 → 管理员审核 → 审核通过后自动执行（扣款/到账等）。审核不通过则退回并填写原因。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: 审核记录能否批量操作？</div>
+          <div class="faq-answer">A: 目前暂不支持批量审核，需要逐条处理每条记录。</div>
+        </div>
+
+        <h3>11.4 系统维护</h3>
+        <div class="faq-item">
+          <div class="faq-question">Q: 开启维护模式后会发生什么？</div>
+          <div class="faq-answer">A: 仅管理员可登录系统，投资者无法访问平台，页面会显示维护提示。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: 修改汇率会影响什么？</div>
+          <div class="faq-answer">A: 汇率修改后，所有投资者的资产估值会重新计算。建议每日开市前更新汇率。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: 如何导出数据报表？</div>
+          <div class="faq-answer">A: 可以在投资者列表、交易记录等页面通过「导出」按钮导出 CSV 文件。</div>
+        </div>
+      </section>
+
+      <section class="content-section" id="appendix-a">
+        <h2>附录 A：权限对照表</h2>
+        <div class="section-subtitle">管理员 vs 超级管理员 权限对比</div>
+        <div class="table-wrapper"><table>
+<thead><tr><th>功能模块</th><th>管理员</th><th>超级管理员</th></tr></thead>
+<tbody>
+<tr><td>仪表盘查看</td><td>✅</td><td>✅</td></tr>
+<tr><td>投资者列表查看</td><td>✅</td><td>✅</td></tr>
+<tr><td>创建投资者</td><td>✅</td><td>✅</td></tr>
+<tr><td>编辑投资者信息</td><td>✅</td><td>✅</td></tr>
+<tr><td>批量导入投资者</td><td>✅</td><td>✅</td></tr>
+<tr><td>停用/启用投资者</td><td>✅</td><td>✅</td></tr>
+<tr><td>查看投资者详情</td><td>✅</td><td>✅</td></tr>
+<tr><td>重置投资者密码</td><td>✅</td><td>✅</td></tr>
+<tr><td>设置交易限制</td><td>✅</td><td>✅</td></tr>
+<tr><td>查看股票列表</td><td>✅</td><td>✅</td></tr>
+<tr><td>创建/编辑股票</td><td>✅</td><td>✅</td></tr>
+<tr><td>删除股票</td><td>✅</td><td>✅</td></tr>
+<tr><td>分配股票给投资者</td><td>✅</td><td>✅</td></tr>
+<tr><td>发起股票交易</td><td>✅</td><td>✅</td></tr>
+<tr><td>批量交易</td><td>✅</td><td>✅</td></tr>
+<tr><td>管理股票板块</td><td>✅</td><td>✅</td></tr>
+<tr><td>创建/编辑汇率快照</td><td>✅</td><td>✅</td></tr>
+<tr><td>管理股市数据</td><td>✅</td><td>✅</td></tr>
+<tr><td>审核记录</td><td>✅</td><td>✅</td></tr>
+<tr><td>查看审计日志</td><td>✅</td><td>✅</td></tr>
+<tr><td>查看系统设定</td><td>✅</td><td>✅</td></tr>
+<tr><td>修改系统设定</td><td>❌</td><td>✅</td></tr>
+<tr><td>维护模式开关</td><td>❌</td><td>✅</td></tr>
+<tr><td>管理消息模板</td><td>✅</td><td>✅</td></tr>
+<tr><td>处理用户反馈</td><td>✅</td><td>✅</td></tr>
+<tr><td>提升/降级管理员</td><td>❌</td><td>✅（需后端支持）</td></tr>
+<tr><td>删除投资者</td><td>❌</td><td>❌（需联系后端）</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout info"><strong>💡 说明</strong>❌ 表示无此操作权限，如确需操作请联系超级管理员或后端技术人员。</div>
+      </section>
+
+      <section class="content-section" id="appendix-b">
+        <h2>附录 B：联系支持</h2>
+        <h3>技术支持团队</h3>
+        <div class="table-wrapper"><table>
+<thead><tr><th>联系方式</th><th>信息</th></tr></thead>
+<tbody>
+<tr><td>支持邮箱</td><td>support@virtucapital.com</td></tr>
+<tr><td>技术支持热线</td><td>+852 1234 5678</td></tr>
+<tr><td>工单系统</td><td>https://support.virtu-capital.com</td></tr>
+<tr><td>工作时间</td><td>周一至周五 09:00 - 18:00（香港时间）</td></tr>
+<tr><td>紧急联系</td><td>值班运维：+852 8765 4321（24/7）</td></tr>
+</tbody>
+</table></div>
+
+        <div class="callout warning"><strong>⚠️ 重要</strong>如需协助请联系技术支持团队）而不要直接联系后端技术人员，以确保问题的及时处理和记录。</div>
+        <div style="margin-top: 24px;">
+          <h3>报告问题的建议信息</h3>
+          <p>报告问题时，请准备以下信息以便快速解决：</p>
+          <ol>
+<li>问题描述和期望结果</li>
+<li>问题重现步骤</li>
+<li>系统版本和环境信息</li>
+<li>相关截图或日志</li>
+<li>操作发生的时间和时区</li>
+</ol>
+
+        </div>
+        <div style="margin-top: 40px; padding: 20px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-align: center;">
+          <p style="margin:0; color:#64748b;">— 文档结束 —</p>
+        </div>
+      </section>
+    </div><!-- /content -->
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" title="回到顶部">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
